@@ -245,3 +245,5 @@ MIGRACION CATEGORYPRODUCT
 
 CREAR LA MIGRACION Y CREACION DE LAS TABLAS
 sequelize db:migrate
+
+node_modules/.bin/sequelize db:migrate
