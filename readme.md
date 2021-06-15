@@ -6,9 +6,13 @@ This project is used as a follow through for learning sequelize ORM and object m
 
 
 #### Video lessons:
+
 [Lesson 1](https://drive.google.com/file/d/1lpKHwuwbRji0lF4mPTIxSBdf83AtkKOL/view)
+
 [Lesson 2](https://drive.google.com/file/d/16HNXrSqS5B5g72pXemGtt1akEZ2coTmJ/view)
+
 [Lesson 3](https://drive.google.com/file/d/1s2FStbqSgLakE0eYN7k4ymjly8dYWnTU/view)
+
 [Lesson 4](https://drive.google.com/file/d/1UJIsKReaMKoHvM5HkVnMuDQXbA8aN-Ix/view)
 
 #### ERD Diagram 
@@ -16,8 +20,7 @@ This project is used as a follow through for learning sequelize ORM and object m
 
 [Sequelize Object Relationship Modeling](https://sequelize.org/master/manual/assocs.html)
 
-![plot](ERD.png)
-
+![Alt text](ERD.png?raw=true "Title")
 
 #### Notes:
 
