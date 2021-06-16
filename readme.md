@@ -20,7 +20,7 @@ This project is used as a follow through for learning sequelize ORM and object m
 
 [Sequelize Object Relationship Modeling](https://sequelize.org/master/manual/assocs.html)
 
-![Alt text](ERD.png?raw=true "Title")
+![Alt text](ERD.PNG "Title")
 
 #### Notes:
 
