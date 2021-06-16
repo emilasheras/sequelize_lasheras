@@ -1,0 +1,65 @@
+Create DB:
+CREATE DATABASE udaecom;
+
+Create sequelize src folder (src2)
+
+
+const path = require('path')
+module.exports = {
+    config: path.resolve('./src2/database/config', 'config.js'),
+    'models-path': path.resolve('./src2/database/models'),
+    'seeders-path': path.resolve('./src2/database/seeders'),
+    'migrations-path': path.resolve('./src2/database/migrations'),
+}
+
+
+Create tables in order:
+without FK's
+
+address
+state
+gender
+size
+category
+brand
+payment
+role
+
+with FK's
+
+user (depends on adresses)
+userHasRole (depends on users and roles)
+order (depends on: payments, users, usersAdresses, states)}
+shipping (attributes are hidden from view but seems like it demends on orders - AT LEAST)
+product (depends on: brands, categories, sizes, genders)
+orderDetail (depends on: orders, products)
+image (depends on: products)
+
+
+Sequelize create table CMDs:
+
+No dependencies:
+sequelize model:generate --name address --attributes street:string,number:integer
+sequelize model:generate --name state --attributes description:string
+sequelize model:generate --name gender --attributes type:string
+sequelize model:generate --name size --attributes value:string
+sequelize model:generate --name category --attributes name:string
+sequelize model:generate --name brand --attributes name:string
+sequelize model:generate --name payment --attributes type:string
+sequelize model:generate --name role --attributes description:string
+
+(the attribute for size is made up, as it is not shown)
+Now, the dependent tables:
+
+sequelize model:generate --name user --attributes first_name:string,last_name:string,username:string,email:string,password:string,addresses_id:integer
+////////////Continuar
+sequelize model:generate --name userHasRole --attributes type:string
+sequelize model:generate --name order --attributes value:string
+sequelize model:generate --name shipping --attributes name:string
+sequelize model:generate --name product --attributes name:string
+sequelize model:generate --name orderDetail --attributes type:string
+sequelize model:generate --name image --attributes description:string
+
+run migrations with:
+
+node_modules/.bin/sequelize db:migrate
