@@ -53,13 +53,16 @@ Now, the dependent tables:
 
 sequelize model:generate --name user --attributes first_name:string,last_name:string,username:string,email:string,password:string,addresses_id:integer
 sequelize model:generate --name users_has_role --attributes users_id:integer, roles_id:integer
-sequelize model:generate --name order --attributes number:integer,date:integer,total:decimal
+sequelize model:generate --name order --attributes number:integer,date:integer,total:decimal,payments_id:integer,users_id:integer,users_addresses_id:integer,states_id:integer
 sequelize model:generate --name shipping --attributes street:string,number:integer,order_id:integer
 sequelize model:generate --name product --attributes name:string,price:decimal,stock:integer,stock_min:integer,stock_max:integer,brands_id:integer,categories_id:integer
 sequelize model:generate --name image --attributes name:string,product_id:integer
 sequelize model:generate --name order_detail --attributes quantity:decimal,subtotal:decimal,order_id:integer,product_id:integer
 
 Always check if migrations ran in the correct order. sometimes when copypasting some switches places. and order of excecution of migrations is really important.
+In case you fucked up you can run model:generate with an extra parameter at the end called --force . this updates the model and creates a new migration.
+
+
 
 run migrations with:
 

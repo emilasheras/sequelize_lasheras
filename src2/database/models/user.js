@@ -13,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       user.belongsTo(models.address);
       user.belongsToMany(models.role, { through: 'users_has_role', as: 'role' });
+      user.belongsTo(models.order);
+
     }
   };
   user.init({

@@ -11,13 +11,17 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      order.belongsToMany(models.product, { through: 'order_detail', as: 'product' });
+      order.hasOne(models.user);
     }
   };
   order.init({
     number: DataTypes.INTEGER,
     date: DataTypes.INTEGER,
-    total: DataTypes.DECIMAL
+    total: DataTypes.DECIMAL,
+    payments_id: DataTypes.INTEGER,
+    users_id: DataTypes.INTEGER,
+    users_addresses_id: DataTypes.INTEGER,
+    states_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'order',
