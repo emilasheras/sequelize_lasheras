@@ -52,13 +52,12 @@ sequelize model:generate --name role --attributes description:string
 Now, the dependent tables:
 
 sequelize model:generate --name user --attributes first_name:string,last_name:string,username:string,email:string,password:string,addresses_id:integer
-////////////Continuar
-sequelize model:generate --name userHasRole --attributes type:string
-sequelize model:generate --name order --attributes value:string
-sequelize model:generate --name shipping --attributes name:string
-sequelize model:generate --name product --attributes name:string
-sequelize model:generate --name orderDetail --attributes type:string
-sequelize model:generate --name image --attributes description:string
+sequelize model:generate --name users_has_role --attributes users_id:integer, roles_id:integer
+sequelize model:generate --name order --attributes number:integer,date:integer,total:decimal
+sequelize model:generate --name shipping --attributes street:string,number:integer,order_id:integer
+sequelize model:generate --name product --attributes name:string,price:decimal,stock:integer,stock_min:integer,stock_max:integer,brands_id:integer,categories_id:integer
+sequelize model:generate --name order_detail --attributes quantity:decimal,subtotal:decimal,order_id:integer,product_id:integer
+sequelize model:generate --name image --attributes name:string,product_id:integer
 
 run migrations with:
 
